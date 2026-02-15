@@ -1,15 +1,19 @@
-package sia;
+package sia.provider.impl;
 
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
+import sia.model.WeatherData;
+import sia.provider.WeatherProvider;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-import static sia.DateTimeFactory.now;
+import static sia.model.DateTimeFactory.now;
 
 @Data
+@Component
 public class MockWeatherProvider implements WeatherProvider {
     private final Map<String, Double> data = new HashMap<>();
     private LocalDateTime now;

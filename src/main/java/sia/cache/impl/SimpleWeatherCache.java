@@ -1,9 +1,14 @@
-package sia;
+package sia.cache.impl;
+
+import org.springframework.stereotype.Component;
+import sia.model.WeatherData;
+import sia.cache.WeatherCache;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SimpleWeatherCache implements WeatherCache{
+@Component
+public class SimpleWeatherCache implements WeatherCache {
     private final Map<String, WeatherData> cache = new HashMap<>();
 
     @Override
