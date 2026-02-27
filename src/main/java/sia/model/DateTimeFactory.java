@@ -1,4 +1,4 @@
-package sia;
+package sia.model;
 
 import java.time.LocalDateTime;
 

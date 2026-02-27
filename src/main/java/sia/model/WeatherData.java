@@ -1,4 +1,4 @@
-package sia;
+package sia.model;
 
 import lombok.Data;
 
@@ -18,7 +18,7 @@ public class WeatherData {
 
     @Override
     public String toString() {
-        return "sia.WeatherData{" +
+        return "sia.model.WeatherData{" +
                 "city='" + city + '\'' +
                 ", temperature=" + temperature +
                 ", timestamp=" + timestamp +

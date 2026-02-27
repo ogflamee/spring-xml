@@ -1,11 +1,19 @@
-package sia;
+package sia.service;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import sia.cache.WeatherCache;
+import sia.model.WeatherData;
+import sia.provider.WeatherProvider;
+
+@Service
 public class WeatherService {
     private final WeatherProvider provider;
     private final WeatherCache cache;
     private final boolean cacheEnabled;
 
-    public WeatherService(WeatherProvider provider, WeatherCache cache, boolean cacheEnabled) {
+    public WeatherService(WeatherProvider provider, WeatherCache cache,
+                          @Value("${cache.enabled}") boolean cacheEnabled) {
         this.provider = provider;
         this.cache = cache;
         this.cacheEnabled = cacheEnabled;
