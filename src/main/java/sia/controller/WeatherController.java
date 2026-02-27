@@ -1,27 +1,36 @@
 package sia.controller;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 import sia.model.WeatherData;
 import sia.service.WeatherService;
 
 import java.util.List;
 
 @Data
-@Controller
+@RestController
+@RequestMapping("/api/weather")
+@RequiredArgsConstructor
 public class WeatherController {
     private final WeatherService weatherService;
     private final List<String> cities;
 
-    public WeatherController(WeatherService weatherService,@Qualifier("citiesList") List<String> cities) {
-        this.weatherService = weatherService;
-        this.cities = cities;
+    @GetMapping("/{city}")
+    public WeatherData getWeather(@PathVariable String city) {
+        return weatherService.getWeather(city);
     }
 
-    public void printWeather(String city) {
-        WeatherData data = weatherService.getWeather(city);
-        System.out.println(data);
+    @GetMapping
+    public WeatherData getWeatherByParam(@RequestParam String city) {
+        return weatherService.getWeather(city);
     }
+
+@GetMapping
+    public List<String> getCities() {
+        return cities;
+}
 }
 

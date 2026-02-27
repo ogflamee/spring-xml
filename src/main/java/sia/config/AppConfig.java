@@ -6,12 +6,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
 @Configuration
+@EnableWebMvc
 @ComponentScan("sia")
 @PropertySource("classpath:application.properties")
 public class AppConfig {

@@ -1,0 +1,10 @@
+sia\model\DateTimeFactory.class
+sia\model\WeatherData.class
+sia\provider\impl\MockWeatherProvider.class
+sia\cache\impl\SimpleWeatherCache.class
+sia\controller\WeatherController.class
+sia\Main.class
+sia\service\WeatherService.class
+sia\cache\WeatherCache.class
+sia\config\AppConfig.class
+sia\provider\WeatherProvider.class
